@@ -106,14 +106,17 @@ header a:hover {
 
 /* Updated Hero Section to show more of the bottom photo */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    position: relative; /* REQUIRED: Anchors the blurred layer*/ 
+    overflow: hidden;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('FinalCovercrop.png');
-    
-    background-size: cover;
+     */
+    /* background-size: cover; */
     /* PINS THE TOP OF THE IMAGE (The Sign) at the top of the box */
-    background-position: top center; 
-    background-repeat: no-repeat;
     
+    /* background-position: top center; 
+    background-repeat: no-repeat; */
+
     /* We keep the top padding normal, but push the bottom out significantly */
     /* This "stretches" the green background area downwards to reveal the students */
     padding: 60px 50px 450px 50px; 
@@ -127,6 +130,29 @@ header a:hover {
     align-items: center;
     text-align: center;
     color: #ffffff;
+}
+
+ /* This layer handles the blurred photo independently of the text*/
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('FinalCovercrop.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    
+    
+    filter: blur(1px); 
+    
+    
+    transform: scale(1.05); 
+    
+
+    z-index: -1; 
 }
 
 .hero h1 {
@@ -149,6 +175,11 @@ header a:hover {
                 url('LaboratoryGen.png');
     background-size: cover;
     background-position: center;
+}
+
+/* NEW: This completely disables the blurred homepage layer on the Admissions page */
+.hero.admissions-bg::before {
+    display: none;
 }
 
 /* Features Grid */
