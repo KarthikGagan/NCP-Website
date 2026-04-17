@@ -515,4 +515,22 @@ header nav a.active {
     .rank-grid {
         grid-template-columns: 1fr;
     }
+
+    /* 6. Stop the page from scrolling sideways */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 7. Stop the logo text from breaking the screen width */
+    .logo strong {
+        white-space: normal; /* Allows text to wrap to a new line */
+        font-size: 1.2rem; /* Shrinks the giant text slightly */
+        line-height: 1.2;
+    }
+
+    /* 8. Reduce the desktop-sized padding on the header */
+    header {
+        padding: 15px 10px; 
+    }
 }
