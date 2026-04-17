@@ -467,3 +467,52 @@ header nav a.active {
     color: #8c2121; /* Deep Red to match your theme */
     border-bottom: 2px solid #8c2121;
 }
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (Screens under 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Stack the Home Page Features/Cards */
+    .features {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* 2. Fix the massive Hero spacing and text size */
+    .hero {
+        padding: 60px 20px 200px 20px; /* Reduces the 450px bottom padding */
+        min-height: 50vh;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* 3. Stack Labs & Library */
+    .lab-highlight .container, 
+    .library-highlight .container {
+        flex-direction: column !important;
+        gap: 30px !important;
+        text-align: center !important;
+    }
+    .lab-highlight .container div, 
+    .library-highlight .container div {
+        text-align: center; /* Centered text looks better on mobile */
+    }
+
+    /* 4. Stack Activity Cards */
+    .activity-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* 5. Stack the Rank Grid */
+    .rank-grid {
+        grid-template-columns: 1fr;
+    }
+}

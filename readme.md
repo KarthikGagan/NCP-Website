@@ -3,7 +3,7 @@
 A comprehensive, professional, and responsive website for Niveditha College of Pharmacy, Chintamani. This project showcases the college's legacy, academic rigor, and vibrant campus life.
 
 ## 🚀 Live Demo
-[Insert your GitHub Pages link here]
+https://karthikgagan.github.io/NCP-Website/
 
 ## 🛠️ Features
 - **Multi-Page Architecture**: Five dedicated pages including Home, About, Academics, Admissions, and Contact.
