@@ -122,7 +122,7 @@ header a:hover {
     padding: 60px 50px 450px 50px; 
     
     /* Ensures the section takes up most of the screen */
-    min-height: 75vh; 
+    min-height: 70vh; 
     
     display: flex;
     flex-direction: column;
@@ -398,4 +398,72 @@ footer {
 .activity-card h3 {
     color: #8c2121; /* Deep Red */
     margin-bottom: 15px;
+}
+
+/* --- Library Section Styling --- */
+.library-highlight {
+    background-color: #ffffff; /* White to contrast with the Grey Labs section */
+    padding: 20px 50px;
+}
+
+/* Reuses the same responsive logic as the Labs */
+@media (max-width: 900px) {
+    .library-highlight .container {
+        flex-direction: column-reverse; /* Stacks text on top of image on mobile */
+    }
+}
+
+/* --- Lab Highlight & Divider --- */
+.lab-highlight {
+    /* This creates the white dividing line */
+    border-bottom: 2px solid #ffffff; 
+}
+
+/* Ensure the text inside is styled correctly */
+.lab-highlight h2 {
+    color: #1a5032;
+    margin-bottom: 20px;
+}
+
+/* --- Contact Page Specifics --- */
+.hero.contact-bg::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('Contact.png'); /* Or any campus image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    transform: scale(1.05);
+}
+
+.contact-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.contact-info h3, .contact-form h3 {
+    color: #1a5032; /* Pharmacy Green */
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* Responsive Fix */
+@media (max-width: 900px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+
+header nav a.active {
+    color: #8c2121; /* Deep Red to match your theme */
+    border-bottom: 2px solid #8c2121;
 }
