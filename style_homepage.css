@@ -1,0 +1,209 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Align the website and set the dark green background */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    background-color: #1a5032; /* Dark Pharmacy Green */
+}
+
+main {
+    flex: 1; 
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #ffffff; /* Crisp White Header */
+    color: #1a5032;
+    border-bottom: 3px solid #8c2121; /* Red line to separate header */
+    position: relative;
+    gap: 20px;
+}
+
+/* 2. The Middle Slot (Links) - Replaces your absolute positioning */
+header nav {
+    flex: 1;            /* Takes up exactly 1/3 of the header */
+    display: flex;
+    justify-content: center; /* Keeps links centered in that 1/3 space */
+    gap: 25px;
+}
+
+header nav a {
+    color: #1a5032;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    white-space: nowrap; /* Prevents links from wrapping to two lines */
+    transition: color 0.3s ease;
+    margin: 0;           /* Clean up old margins */
+}
+
+/* 3. The Right Slot (Button) */
+.header-right {
+    flex: 1; /* Takes up 1/3 of the header */
+    display: flex;
+    justify-content: flex-end; /* Pushes button to the far right */
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    flex: 1;
+}
+
+.logo-img {
+    height: 80px; 
+    width: auto; 
+}
+
+.logo strong {
+    font-size: 1.6rem;
+    font-weight: 800;
+    /*color: #1a5032; /* Green text */
+    color: #8c2121;
+    white-space: nowrap;
+}
+
+header a {
+    color: #1a5032; /* Green links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #8c2121; /* Links turn deep red when hovered */
+}
+
+/* Buttons */
+.cta-button {
+    background-color: #8c2121; /* Deep Red accent */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #631515; /* Darker red on hover */
+}
+
+/* Updated Hero Section to show more of the bottom photo */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('FinalCovercrop.png');
+    
+    background-size: cover;
+    /* PINS THE TOP OF THE IMAGE (The Sign) at the top of the box */
+    background-position: top center; 
+    background-repeat: no-repeat;
+    
+    /* We keep the top padding normal, but push the bottom out significantly */
+    /* This "stretches" the green background area downwards to reveal the students */
+    padding: 60px 50px 450px 50px; 
+    
+    /* Ensures the section takes up most of the screen */
+    min-height: 75vh; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Keeps text closer to the top/middle area */
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-top: 50px; /* Adjust this to move the text up or down over the sign */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+/* Special class for the Admissions page hero background */
+.hero.admissions-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('LaboratoryGen.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Features Grid */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #1a5032; /* Match Hero Background */
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff; /* Crisp white cards for a clean medical/academic look */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); 
+}
+
+.card h3 {
+    color: #8c2121; /* Red titles on the white cards to make them pop */
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #333333; /* Dark grey text for easy reading */
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* White footer */
+    color: #1a5032; /* Green text */
+    border-top: 3px solid #8c2121; /* Red line to anchor it */
+    width: 100%;
+}
+
+/* --- Responsive Fix: Prevents Overlap --- */
+@media (max-width: 1200px) {
+    header {
+        flex-direction: column; /* Stacks everything vertically when space is tight */
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .logo, header nav, .header-right {
+        justify-content: center;
+        text-align: center;
+        flex: none; /* Disables the 1/3 slots on mobile for better stacking */
+    }
+
+    .logo-img {
+        height: 60px; /* Smaller logo on small screens */
+    }
+}
