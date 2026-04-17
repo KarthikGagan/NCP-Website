@@ -1,0 +1,10 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Local images/backups you don't want online
+*_backup.*
+temp/
