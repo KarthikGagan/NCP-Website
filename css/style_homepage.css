@@ -533,4 +533,27 @@ header nav a.active {
     header {
         padding: 15px 10px; 
     }
+
+    /* 9. Fix the Navigation Cut-off */
+    header nav {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+    
+    header nav a {
+        font-size: 0.95rem !important; /* Shrinks the text slightly so it fits */
+        margin: 5px 10px !important; /* Gives them breathing room to wrap */
+    }
+
+    /* 10. Fix the Footer Squish */
+    footer div, 
+    footer .footer-container {
+        display: flex !important;
+        flex-direction: column !important; /* Forces the 3 columns to stack vertically */
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important; /* Adds nice spacing between the stacked items */
+        width: 100% !important;
+    }
 }
